@@ -21,11 +21,11 @@ public class Rational{
     }
 
     public int getNum(){
-	    return numerator;
+	return numerator;
     }
 
     public int getDen(){
-	    return denominator;
+	return denominator;
     }
     
     public String toString(){
