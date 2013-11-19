@@ -1,4 +1,4 @@
-public class Rational{
+public class Rational implements Comparable{
 
     private int numerator;
     private int denominator;
