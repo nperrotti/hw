@@ -108,14 +108,28 @@ public class Rational implements Comparable{
         return a;
     }
 
-    public int compareTo( Rational rat ){
-	double a = this.floatValue();
-	double b = rat.floatValue();
-	if (a == b)
-	    return 0;
-	else if (a > b)
-	    return 1;
-	else 
-	    return -1;
+    public boolean equals( Rational a ){
+    	reduce();
+        a.reduce();
+	if (numerator == a.getNum() && denominator == a.getDen()){
+	    return true;
+	}
+	else{
+	    return false;
+	}
     }
+
+    public int compareTo( Object rat ) {
+    	if (!=(rat instanceOf Rational)){
+    		System.out.println("Error: Object not of Class Rational");
+    	}
+        int num;
+	int ratNum;
+        num = numerator * ((Rational)rat).getDen();
+        ratNum = denominator * ((Rational)rat).getNum();
+
+        return num - ratNum;
+
+    }
+
 }
