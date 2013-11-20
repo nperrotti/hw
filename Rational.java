@@ -120,7 +120,7 @@ public class Rational implements Comparable{
     }
 
     public int compareTo( Object rat ) {
-    	if (!=(rat instanceOf Rational)){
+    	if (!(rat instanceOf Rational)){
     		System.out.println("Error: Object not of Class Rational");
     	}
         int num;
