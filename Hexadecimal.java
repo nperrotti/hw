@@ -4,6 +4,8 @@ public class Hexadecimal implements Comparable {
 
     private int _decNum;
     private String _hexNum;
+    
+    public static final String AHEXCDIGITS = "0123456789ABCDEF";
 
 
     /*=====================================
@@ -11,7 +13,9 @@ public class Hexadecimal implements Comparable {
       pre:  n/a
       post: initializes _decNum to 0, _hexNum to "0"
       =====================================*/
-    public Hexadecimal() { 
+    public Hexadecimal() {
+        _decNum = 0;
+        _hexNum = "0";
 
     }
 
@@ -22,6 +26,8 @@ public class Hexadecimal implements Comparable {
       post: sets _decNum to n, _hexNum to equiv string of hex digits
       =====================================*/
     public Hexadecimal( int n ) {
+        _decNum = n;
+        _hexNum = hexToBin(n);
 
     }
 
@@ -32,7 +38,7 @@ public class Hexadecimal implements Comparable {
       post: returns String of 1's and 0's representing value of this Object
       =====================================*/
     public String toString() { 
-
+        return _hexNum();
     }
 
 
@@ -51,6 +57,12 @@ public class Hexadecimal implements Comparable {
           hexToBin(42) -> "2A"
       =====================================*/
     public static String hexToBin( int n ) {
+        result = "";
+        for ( int x = n; x > 16; x = x / 16;){
+            int z = x % 16;
+            result = AHEXDIGITS.substring(z-1, z);
+        }
+    return result;
 
     }
 
