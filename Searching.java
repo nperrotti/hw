@@ -73,8 +73,17 @@ public class Searching {
             returns -1 if target not found
       ==================================================*/
     public static int linSearch ( Binary[] a, Binary target ) {
-        //YOUR IMPLEMENTATION HERE
-        return -1; //placeholder
+        int tPos = -1;
+        int i = 0;
+        
+        while ( i < a.length ) {
+          if ( a[i].toString().equals(target) ) {
+                tPos = i;
+                break;
+          }
+          i++;
+        }
+        return tPos; //placeholder
     }
 
 
